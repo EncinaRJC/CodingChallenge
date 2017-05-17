@@ -2,22 +2,22 @@
 using System.Web.UI.WebControls;
 using CodingChallenge.Data.DataAccess;
 
-namespace CodingChallenge
+namespace Challenge
 {
     public partial class Index : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
-        protected void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+        protected void BootstrapComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             var repositorio = new MockRepository().TituloRepository;
             var titulos = repositorio.GetTitulos();
             foreach (var buscoValor in titulos)
             {
-                if (buscoValor.Descripcion.ToString() == ComboBox1.SelectedItem.Text.ToString())
+                if (buscoValor.Descripcion.ToString() == BootstrapComboBox1.SelectedItem.Text.ToString())
                 {
                     TableRow tituloEncontrado = new TableRow();
                     Table1.Rows.Add(tituloEncontrado);
@@ -50,6 +50,11 @@ namespace CodingChallenge
                     Table1.Visible = true;
                 }
             }
+        }
+
+        protected void BootstrapComboBox1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
         }
     }
 }
